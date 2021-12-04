@@ -1,12 +1,10 @@
-package adventOfCode;
+package advent_2021;
 
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class Day_4Test {
     @Test
