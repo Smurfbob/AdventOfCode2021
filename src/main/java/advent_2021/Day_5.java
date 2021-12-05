@@ -37,6 +37,7 @@ public class Day_5 {
             for (Position el : list)
             {
                 this.addUp(el);
+                System.out.println(this);
                 while (!Position.positionsEqual(el))
                 {
                     if(el.x1 != el.x2)
@@ -61,6 +62,7 @@ public class Day_5 {
                             el.y2--;
                         }
                     }
+                    System.out.println(this);
                     this.addUp(el);
                 }
             }
@@ -90,6 +92,8 @@ public class Day_5 {
                     }
                 }
             }
+
+            out = out + "\n--------------------------\n";
 
             return out;
         }
