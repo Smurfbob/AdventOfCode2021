@@ -7,6 +7,8 @@ import java.util.stream.Collectors;
 
 public class Day_1
 {
+
+
     public static long calcValue(String numbers)
     {
         List<Integer> list = Arrays.stream(numbers.split("\n")).map(el -> new Scanner(el).nextInt()).collect(Collectors.toList());

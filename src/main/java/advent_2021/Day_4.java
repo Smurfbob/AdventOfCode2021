@@ -88,24 +88,24 @@ public class Day_4 {
     {
         private static int boardCounter = 1;
 
-        private final Cell[][] bingoField;
+        private final Cell[][] fieldOfBingo;
         private final int id;
 
         public BingoGame(String numbers)
         {
-            bingoField = genBingoField(numbers);
+            fieldOfBingo = genBingoField(numbers);
             this.id = boardCounter;
             boardCounter++;
         }
 
         public boolean isVictory()
         {
-            for(int i=0 ; i < this.bingoField.length ; i++)
+            for(int i = 0; i < this.fieldOfBingo.length ; i++)
             {
                 int counter = 0;
-                for(int k=0 ; k < this.bingoField[i].length ; k++)
+                for(int k = 0; k < this.fieldOfBingo[i].length ; k++)
                 {
-                    if(this.bingoField[i][k].active)
+                    if(this.fieldOfBingo[i][k].active)
                     {
                         counter++;
                     }
@@ -117,12 +117,12 @@ public class Day_4 {
                 }
             }
 
-            for(int i=0 ; i < this.bingoField.length ; i++)
+            for(int i = 0; i < this.fieldOfBingo.length ; i++)
             {
                 int counter = 0;
-                for(int k=0 ; k < this.bingoField[i].length ; k++)
+                for(int k = 0; k < this.fieldOfBingo[i].length ; k++)
                 {
-                    if(this.bingoField[k][i].active)
+                    if(this.fieldOfBingo[k][i].active)
                     {
                         counter++;
                     }
@@ -155,17 +155,17 @@ public class Day_4 {
 
         public void setCellStatus(int x, int y, boolean status)
         {
-            this.bingoField[x][y].active = status;
+            this.fieldOfBingo[x][y].active = status;
         }
 
         public int getFieldSum()
         {
-            return flatMap(this.bingoField).stream().filter(el -> !el.active).mapToInt(el -> el.number).sum();
+            return flatMap(this.fieldOfBingo).stream().filter(el -> !el.active).mapToInt(el -> el.number).sum();
         }
 
         public void activateCell(int number)
         {
-            for(Cell cell : flatMap(this.bingoField))
+            for(Cell cell : flatMap(this.fieldOfBingo))
             {
                 if(cell.number == number)
                 {
@@ -217,11 +217,11 @@ public class Day_4 {
             String out = new String();
             out = out + this.id + "\n";
 
-            for(int i=0 ; i < this.bingoField.length ; i++)
+            for(int i = 0; i < this.fieldOfBingo.length ; i++)
             {
-                for(int k = 0 ; k < this.bingoField[i].length ; k++)
+                for(int k = 0; k < this.fieldOfBingo[i].length ; k++)
                 {
-                    Cell cell = this.bingoField[i][k];
+                    Cell cell = this.fieldOfBingo[i][k];
                     if(cell.active)
                     {
                         out = out + "T";

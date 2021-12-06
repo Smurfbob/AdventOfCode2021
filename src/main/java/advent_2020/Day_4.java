@@ -61,8 +61,8 @@ public class Day_4
         {
             List<String> list = Arrays.stream(input.split("\n")).collect(Collectors.toList());
 
-            List<String> lineOne = Arrays.stream(list.get(0).split(" ")).toList();
-            List<String> lineTwo = Arrays.stream(list.get(1).split(" ")).toList();
+            List<String> lineOne = Arrays.stream(list.get(0).split(" ")).collect(Collectors.toList());
+            List<String> lineTwo = Arrays.stream(list.get(1).split(" ")).collect(Collectors.toList());
 
 
             this.mapData(lineOne);
