@@ -3,6 +3,7 @@ package advent_2021;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Day_5 {
     public static int lineOverlap(String input) {
@@ -20,7 +21,7 @@ public class Day_5 {
         private List<Position> positions;
 
         public Field(String input) {
-            this.positions = Arrays.stream(input.split("\n")).map(Field::genPosition).toList();
+            this.positions = Arrays.stream(input.split("\n")).map(Field::genPosition).collect(Collectors.toList());
             this.markPositions(this.positions);
         }
         {
@@ -99,12 +100,12 @@ public class Day_5 {
         }
 
         private static Position genPosition(String command) {
-            List<String> list = Arrays.stream(command.split(" ")).toList();
+            List<String> list = Arrays.stream(command.split(" ")).collect(Collectors.toList());
             String a = list.get(0);
             String b = list.get(2);
 
-            List<Integer> listA = Arrays.stream(a.split(",")).map(el -> new Scanner(el).nextInt()).toList();
-            List<Integer> listB = Arrays.stream(b.split(",")).map(el -> new Scanner(el).nextInt()).toList();
+            List<Integer> listA = Arrays.stream(a.split(",")).map(el -> new Scanner(el).nextInt()).collect(Collectors.toList());
+            List<Integer> listB = Arrays.stream(b.split(",")).map(el -> new Scanner(el).nextInt()).collect(Collectors.toList());
 
             return new Position(listA.get(0), listA.get(1), listB.get(0), listB.get(1));
         }

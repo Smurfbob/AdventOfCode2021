@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 class Day_4Test {
     @Test
@@ -22,7 +23,7 @@ class Day_4Test {
     }
 
     public static List<String> genBoards(String input) {
-        List<String> boards = Arrays.stream(input.split("\n")).toList();
+        List<String> boards = Arrays.stream(input.split("\n")).collect(Collectors.toList());
         List<String> out = new ArrayList<>();
         for (int i = 0; i < boards.size(); i++) {
             String next = new String();
