@@ -2,7 +2,6 @@ package advent_2020.day_9;
 
 import advent_2020.day_9.gui.Gui;
 
-import javax.swing.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -19,7 +18,7 @@ public class Day_9
 
     }
     public static final String testInput =
-            "2199943210\n" +
+                    "2199943210\n" +
                     "3987894921\n" +
                     "9856789892\n" +
                     "8767896789\n" +
@@ -30,11 +29,9 @@ public class Day_9
         array = genPointArray(string);
         List<Integer> listOfValues = genHighPointList();
 
-
-
         markBasins();
 
-        Gui gui = new Gui("Test", 1000 ,1000, array, pointMap);
+        new Gui("Test", 1000 ,1000, array, pointMap, getSum(pointMap));
 
         return getSum(pointMap);
     }
@@ -140,12 +137,10 @@ public class Day_9
             pointMap.put(start,new ArrayList<Point>());
         }
 
-        array[now.i][now.k].basin = true;
-
         List<Point> adjacentNumbers = getAdjacentNumbers(now.i, now.k);
         for (Point el : adjacentNumbers)
         {
-            if (el.number == now.number + 1 && el.number != 9 && !el.basin)
+            if (el.number == now.number + 1 && el.number != 9)
             {
                 array[el.i][el.k].basin = true;
                 if(!contains(pointMap.get(start), el))
