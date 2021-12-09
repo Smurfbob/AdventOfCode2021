@@ -1,8 +1,7 @@
 package advent_2020;
 
+import advent_2020.day_9.Day_9;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class Day_9Test
 {
@@ -10,14 +9,13 @@ class Day_9Test
     @Test
     public void test()
     {
-        // assertEquals(15 , Day_9.calcLowPointSum(testInput));
         System.out.println(Day_9.calcLowPointSum(realInput));
     }
 
 
 
 
-    private static final String testInput =
+    public static final String testInput =
             "2199943210\n" +
             "3987894921\n" +
             "9856789892\n" +
@@ -30,7 +28,7 @@ class Day_9Test
 
 
 
-    private static final String realInput =
+    public static final String realInput =
             "9997656789876543234567989101298998743219853135678978901239999876543422349134989891012932398767323567\n" +
             "8943345678998656345679878912987899654598765247899969899997898765432101278999879789129843459653212345\n" +
             "6532234589219969456889967899876598786789874349999856798886789876744512356789765678998764769894101256\n" +
