@@ -56,7 +56,7 @@ public class Day_2
 
         }
 
-        return listOfIntegerList.stream().map(OpCode::new).collect(Collectors.toUnmodifiableList());
+        return listOfIntegerList.stream().map(OpCode::new).collect(Collectors.toList());
     }
 
 
