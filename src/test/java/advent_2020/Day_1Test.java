@@ -1,11 +1,9 @@
 package advent_2020;
 
 
-import org.junit.Test;
 
 class Day_1Test
 {
-    @Test
     public void test()
     {
         System.out.println(Day_1.calcValue(realInput));

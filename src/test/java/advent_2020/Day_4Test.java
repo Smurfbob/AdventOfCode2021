@@ -1,6 +1,6 @@
 package advent_2020;
 
-import org.junit.Assert;
+
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

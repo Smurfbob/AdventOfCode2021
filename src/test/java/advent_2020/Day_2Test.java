@@ -1,6 +1,7 @@
 package advent_2020;
 
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 
 class Day_2Test {
 
